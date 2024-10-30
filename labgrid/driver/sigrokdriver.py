@@ -89,6 +89,8 @@ class SigrokCommon(Driver):
             prefix += ["-d", self.sigrok.driver]
         if self.sigrok.channels:
             prefix += ["-C", self.sigrok.channels]
+        if self.sigrok.group:
+            prefix += ["-g", self.sigrok.group]
         return self.sigrok.command_prefix + prefix
 
     @Driver.check_active
